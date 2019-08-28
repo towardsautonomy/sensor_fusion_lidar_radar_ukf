@@ -57,6 +57,9 @@ class UKF {
   // state covariance matrix
   Eigen::MatrixXd P_;
 
+  // Lidar measurement matrix
+  Eigen::MatrixXd H_laser_;
+  
   // predicted sigma points matrix
   Eigen::MatrixXd Xsig_pred_;
 
@@ -95,6 +98,12 @@ class UKF {
 
   // Sigma point spreading parameter
   double lambda_;
+
+  // NIS for laser
+  double nis_laser_;
+
+  // NIS for radar
+  double nis_radar_;
 };
 
 #endif  // UKF_H
